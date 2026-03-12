@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>駒沢公園スタジオ 2025年度 年間進捗レポート</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hiragino Sans","Meiryo",sans-serif;background:#f0f4f8;color:#1e293b;font-size:14px;line-height:1.7}
+
+.hdr{background:linear-gradient(135deg,#0f2d52 0%,#1a5c99 100%);color:#fff;padding:32px 40px}
+.hdr-store{font-size:.85em;opacity:.75;letter-spacing:.06em}
+.hdr-title{font-size:1.9em;font-weight:800;margin:4px 0;letter-spacing:.03em}
+.hdr-meta{font-size:.8em;opacity:.6;margin-top:6px}
+
+.wrap{max-width:1120px;margin:0 auto;padding:28px 20px}
+.section{background:#fff;border-radius:14px;padding:26px 28px;margin-bottom:24px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.section-title{font-size:1em;font-weight:700;color:#334155;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid #e8edf3;display:flex;align-items:center;gap:8px}
+
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+@media(max-width:720px){.cards{grid-template-columns:repeat(2,1fr)}}
+.card{background:#fff;border-radius:14px;padding:20px 22px;box-shadow:0 2px 8px rgba(0,0,0,.07);border-top:5px solid #e2e8f0;transition:transform .15s}
+.card:hover{transform:translateY(-2px)}
+.card.c-total{border-top-color:#22c55e}
+.card.c-studio{border-top-color:#0ea5e9}
+.card.c-loc{border-top-color:#06b6d4}
+.card.c-grp{border-top-color:#8b5cf6}
+.card-label{font-size:.75em;color:#64748b;font-weight:600;letter-spacing:.04em;margin-bottom:6px}
+.card-value{font-size:1.65em;font-weight:800;color:#0f172a;line-height:1.2}
+.card-sub{font-size:.75em;color:#94a3b8;margin-top:5px}
+
+.chart-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-bottom:24px}
+@media(max-width:720px){.chart-grid{grid-template-columns:1fr}}
+.chart-box{background:#fff;border-radius:14px;padding:24px 20px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+
+table{width:100%;border-collapse:collapse;font-size:.88em}
+th{background:#f8fafc;color:#475569;font-weight:700;padding:10px 14px;text-align:left;border-bottom:2px solid #e2e8f0;white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafbfc}
+.num{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.total-row td{background:#f0fdf4;font-weight:700;border-top:2px solid #86efac}
+.tg-row td{background:#eff6ff;border-top:2px solid #bfdbfe}
+
+.badge-ok{color:#1d4ed8;background:#dbeafe;padding:3px 10px;border-radius:9999px;font-size:.82em;font-weight:600;white-space:nowrap}
+.badge-ng{color:#b91c1c;background:#fee2e2;padding:3px 10px;border-radius:9999px;font-size:.82em;font-weight:600;white-space:nowrap}
+.badge-info{color:#1d4ed8;background:#dbeafe;padding:3px 10px;border-radius:9999px;font-size:.82em}
+
+/* ── Progress bars ── */
+.prog-row{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.prog-label{width:180px;font-weight:600;font-size:.9em;flex-shrink:0}
+.prog-bar-wrap{flex:1;background:#e2e8f0;border-radius:9999px;height:16px;overflow:hidden}
+.prog-bar{height:100%;background:linear-gradient(90deg,#1a5c99,#0ea5e9);border-radius:9999px}
+.prog-vals{display:flex;align-items:center;gap:8px;min-width:300px}
+.prog-detail{font-size:.82em;color:#64748b}
+.prog-na{color:#94a3b8;font-size:.88em}
+
+.footer{text-align:center;color:#94a3b8;font-size:.78em;padding:16px 0 40px}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div style="max-width:1120px;margin:0 auto">
+    <div class="hdr-store">クッポグラフィー 駒沢公園スタジオ</div>
+    <div class="hdr-title">2025年度　年間進捗レポート</div>
+    <div class="hdr-meta">対象期間：2月〜2月（1ヶ月分）　作成日時：2026年03月12日 11:23</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ★ サマリーカード -->
+  <div class="cards">
+    <div class="card c-total">
+      <div class="card-label">スタジオ総売上 累計（税抜）</div>
+      <div class="card-value">¥12,878,836</div>
+      <div class="card-sub">年間TG達成率: 7.9%</div>
+    </div>
+    <div class="card c-studio">
+      <div class="card-label">スタジオ当日売上 累計（税抜）</div>
+      <div class="card-value">¥12,488,791</div>
+      <div class="card-sub">年間TG達成率: 7.6%</div>
+    </div>
+    <div class="card c-loc">
+      <div class="card-label">ロケ売上 累計（税抜）</div>
+      <div class="card-value">¥234,545</div>
+      <div class="card-sub">年間TG達成率: 3.7%</div>
+    </div>
+    <div class="card c-grp">
+      <div class="card-label">総撮影組数 累計</div>
+      <div class="card-value">164 組</div>
+      <div class="card-sub">年間TG達成率: 7.1%</div>
+    </div>
+  </div>
+
+  <!-- ★ TG進捗バー -->
+  <div class="section">
+    <div class="section-title">🎯 年間TG進捗</div>
+<div class="prog-row"><div class="prog-label">スタジオ当日売上</div><div class="prog-bar-wrap"><div class="prog-bar" style="width:7.6%"></div></div><div class="prog-vals"><span class="badge-info">7.6%</span><span class="prog-detail">累計 ¥12,488,791 ／ 年間TG ¥163,695,000</span></div></div>
+<div class="prog-row"><div class="prog-label">ロケ売上</div><div class="prog-bar-wrap"><div class="prog-bar" style="width:3.7%"></div></div><div class="prog-vals"><span class="badge-info">3.7%</span><span class="prog-detail">累計 ¥234,545 ／ 年間TG ¥6,330,000</span></div></div>
+<div class="prog-row"><div class="prog-label">撮影組数</div><div class="prog-bar-wrap"><div class="prog-bar" style="width:7.1%"></div></div><div class="prog-vals"><span class="badge-info">7.1%</span><span class="prog-detail">累計 164 組 ／ 年間TG 2322 組</span></div></div>
+
+  </div>
+
+  <!-- ★ チャート -->
+  <div class="chart-grid">
+    <div class="chart-box">
+      <div class="section-title">📊 月別売上推移（税抜・積み上げ）</div>
+      <canvas id="monthlyChart" height="220"></canvas>
+    </div>
+    <div class="chart-box">
+      <div class="section-title">👥 月別撮影組数</div>
+      <canvas id="groupChart" height="220"></canvas>
+    </div>
+  </div>
+
+  <!-- ★ 月別KPIテーブル -->
+  <div class="section">
+    <div class="section-title">📋 月別KPIサマリー</div>
+<table>
+<tr><th>月</th><th>総売上</th><th>当日</th><th>その他</th><th>ロケ</th><th>組数</th><th>平均単価</th><th>満枠率</th></tr>
+<tr><td style="font-weight:700;text-align:center;">2月</td><td class="num">¥12,878,836</td><td class="num">¥12,488,791</td><td class="num">¥155,500</td><td class="num">¥234,545</td><td class="num">164 組</td><td class="num">¥76,151</td><td class="num">76.3%</td></tr>
+<tr class="total-row"><td style="font-weight:700;text-align:center;">累計</td><td class="num">¥12,878,836</td><td class="num">¥12,488,791</td><td class="num">¥155,500</td><td class="num">¥234,545</td><td class="num">164 組</td><td class="num">¥76,151</td><td class="num">76.3%</td></tr>
+<tr class="tg-row"><td style="font-weight:700;text-align:center;color:#1d4ed8;">年間TG</td><td class="num" style="color:#1d4ed8;">¥163,695,000</td><td class="num" style="color:#1d4ed8;">¥163,695,000</td><td class="num">―</td><td class="num" style="color:#1d4ed8;">¥6,330,000</td><td class="num" style="color:#1d4ed8;">2322 組</td><td class="num">―</td><td class="num">―</td></tr>
+</table>
+
+  </div>
+
+  <div class="footer">クッポグラフィー 駒沢公園スタジオ — 2025年度 年間進捗レポート — 2026年03月12日 11:23 作成</div>
+</div>
+
+<script>
+new Chart(document.getElementById('monthlyChart'), {
+  type: 'bar',
+  data: {
+    labels: ["2月"],
+    datasets: [
+      { label: 'スタジオ当日', data: [12488791],   backgroundColor: 'rgba(14,165,233,.82)', borderRadius: 3 },
+      { label: 'その他',       data: [155500], backgroundColor: 'rgba(139,92,246,.82)', borderRadius: 3 },
+      { label: 'ロケ',         data: [234545],     backgroundColor: 'rgba(6,182,212,.82)',  borderRadius: 3 },
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'top' } },
+    scales: {
+      x: { stacked: true },
+      y: {
+        stacked: true,
+        ticks: { callback: v => v >= 10000 ? (v/10000).toFixed(0)+'万' : v.toLocaleString() }
+      }
+    }
+  }
+});
+
+new Chart(document.getElementById('groupChart'), {
+  type: 'bar',
+  data: {
+    labels: ["2月"],
+    datasets: [
+      { label: '撮影組数', data: [164], backgroundColor: 'rgba(14,165,233,.82)', borderRadius: 4 }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'top' } },
+    scales: { y: { ticks: { stepSize: 1 } } }
+  }
+});
+</script>
+</body>
+</html>
