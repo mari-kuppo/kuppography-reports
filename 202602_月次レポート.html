@@ -69,7 +69,7 @@ tr:hover td{background:#fafbfc}
   <div style="max-width:1120px;margin:0 auto">
     <div class="hdr-store">クッポグラフィー 駒沢公園スタジオ</div>
     <div class="hdr-title">2026年2月　月次売上レポート</div>
-    <div class="hdr-meta">作成日時：2026年03月19日 14:35</div>
+    <div class="hdr-meta">作成日時：2026年03月19日 16:05</div>
   </div>
 </div>
 
@@ -79,7 +79,7 @@ tr:hover td{background:#fafbfc}
   <div class="cards">
     <div class="card c-total">
       <div class="card-label">スタジオ総売上（税抜）</div>
-      <div class="card-value">¥12,488,792</div>
+      <div class="card-value">¥12,488,802</div>
       <div class="card-sub">当日 ＋ その他 ＋ ロケ</div>
     </div>
     <div class="card c-studio">
@@ -94,7 +94,7 @@ tr:hover td{background:#fafbfc}
     </div>
     <div class="card c-location">
       <div class="card-label">ロケーション撮影売上（税抜）</div>
-      <div class="card-value">¥1</div>
+      <div class="card-value">¥11</div>
       <div class="card-sub">TG: ¥90,000 ／ 昨対: 未設定</div>
     </div>
   </div>
@@ -214,9 +214,9 @@ function toggleMenuGroup(gid) {
     <div class="section-title">🌿 ロケーション撮影 実績詳細</div>
 <table>
 <tr><th>指標</th><th>実績</th><th>TG</th><th>TG比</th><th>昨対</th><th>昨対比</th></tr>
-<tr class="label-row"><td>ロケーション撮影売上（税抜）</td><td class="num">¥1</td><td class="num">¥90,000</td><td><span class="badge-ng">-100.0%（¥-89,999）</span></td><td class="num">未設定</td><td><span class="badge-na">未設定</span></td></tr>
+<tr class="label-row"><td>ロケーション撮影売上（税抜）</td><td class="num">¥11</td><td class="num">¥90,000</td><td><span class="badge-ng">-100.0%（¥-89,989）</span></td><td class="num">未設定</td><td><span class="badge-na">未設定</span></td></tr>
 <tr class="label-row"><td>ロケーション撮影組数</td><td class="num">1 組</td><td class="num">1 組</td><td><span class="badge-ok">+0.0%（+¥0）</span></td><td class="num">未設定</td><td><span class="badge-na">未設定</span></td></tr>
-<tr><td>ロケーション平均単価</td><td class="num">¥1</td><td colspan="4" style="color:#94a3b8;font-size:.87em;">ロケ売上 ÷ ロケ組数</td></tr>
+<tr><td>ロケーション平均単価</td><td class="num">¥11</td><td colspan="4" style="color:#94a3b8;font-size:.87em;">ロケ売上 ÷ ロケ組数</td></tr>
 </table>
   </div>
 
@@ -225,6 +225,21 @@ function toggleMenuGroup(gid) {
     <div class="section-title">📄 スタジオその他売上（スクエア請求書・BASEショップ）</div>
 <p style="color:#94a3b8;text-align:center;padding:20px 0;">請求書・BASEデータなし（対象月: 0件）</p>
   </div>
+
+  <!-- ★ フェア別集計 -->
+<div class="section">
+<div class="section-title">🎪 フェア別集計（撮影組数・売上）</div>
+<table>
+<tr><th>フェア名</th><th>組数</th><th>構成比</th><th>売上（税抜）</th></tr>
+<tr><td>バースデーフェア</td><td class="num">61 組</td><td class="num">54%</td><td class="num">¥3,444,264</td></tr>
+<tr><td>七五三後撮りフェア</td><td class="num">25 組</td><td class="num">22%</td><td class="num">¥2,407,609</td></tr>
+<tr><td>バースデー七五三</td><td class="num">7 組</td><td class="num">6%</td><td class="num">¥719,336</td></tr>
+<tr><td>アンティーク着物</td><td class="num">19 組</td><td class="num">17%</td><td class="num">¥2,165,545</td></tr>
+<tr><td>バレンタインフェア</td><td class="num">0 組</td><td class="num">0%</td><td class="num">¥0</td></tr>
+<tr style="font-weight:700;border-top:2px solid #cbd5e1;"><td>合計</td><td class="num">112 組</td><td class="num">—</td><td class="num">¥8,736,754</td></tr>
+</table>
+</div>
+
 
   <!-- ★ 参考情報 -->
   <div class="section">
@@ -243,7 +258,7 @@ function toggleMenuGroup(gid) {
 
   </div>
 
-  <div class="footer">クッポグラフィー 駒沢公園スタジオ — 自動生成レポート 2026年2月分 — 2026年03月19日 14:35 作成</div>
+  <div class="footer">クッポグラフィー 駒沢公園スタジオ — 自動生成レポート 2026年2月分 — 2026年03月19日 16:05 作成</div>
 </div>
 
 <script>
@@ -281,7 +296,7 @@ new Chart(document.getElementById('donutChart'), {
   data: {
     labels: ["スタジオ当日", "その他", "ロケ"],
     datasets: [{
-      data: [12488791, 0, 1],
+      data: [12488791, 0, 11],
       backgroundColor: [
         'rgba(14,165,233,.88)',
         'rgba(139,92,246,.88)',
