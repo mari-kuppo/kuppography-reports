@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>クッポグラフィー 駒沢公園スタジオ 2025年12月 月次レポート</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hiragino Sans","Meiryo",sans-serif;background:#f0f4f8;color:#1e293b;font-size:14px;line-height:1.7}
+
+/* ── Header ── */
+.hdr{background:linear-gradient(135deg,#0f2d52 0%,#1a5c99 100%);color:#fff;padding:32px 40px}
+.hdr-store{font-size:.85em;opacity:.75;letter-spacing:.06em}
+.hdr-title{font-size:1.9em;font-weight:800;margin:4px 0;letter-spacing:.03em}
+.hdr-meta{font-size:.8em;opacity:.6;margin-top:6px}
+
+/* ── Layout ── */
+.wrap{max-width:1120px;margin:0 auto;padding:28px 20px}
+.section{background:#fff;border-radius:14px;padding:26px 28px;margin-bottom:24px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.section-title{font-size:1em;font-weight:700;color:#334155;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid #e8edf3;display:flex;align-items:center;gap:8px}
+
+/* ── Cards ── */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+@media(max-width:720px){.cards{grid-template-columns:repeat(2,1fr)}}
+.card{background:#fff;border-radius:14px;padding:20px 22px;box-shadow:0 2px 8px rgba(0,0,0,.07);border-top:5px solid #e2e8f0;transition:transform .15s}
+.card:hover{transform:translateY(-2px)}
+.card.c-total{border-top-color:#22c55e}
+.card.c-studio{border-top-color:#0ea5e9}
+.card.c-other{border-top-color:#8b5cf6}
+.card.c-location{border-top-color:#06b6d4}
+.card-label{font-size:.75em;color:#64748b;font-weight:600;letter-spacing:.04em;margin-bottom:6px}
+.card-value{font-size:1.65em;font-weight:800;color:#0f172a;line-height:1.2}
+.card-sub{font-size:.75em;color:#94a3b8;margin-top:5px}
+
+/* ── Charts ── */
+.chart-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-bottom:24px}
+@media(max-width:720px){.chart-grid{grid-template-columns:1fr}}
+.chart-box{background:#fff;border-radius:14px;padding:24px 20px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+
+/* ── Tables ── */
+table{width:100%;border-collapse:collapse;font-size:.88em}
+th{background:#f8fafc;color:#475569;font-weight:700;padding:10px 14px;text-align:left;border-bottom:2px solid #e2e8f0;white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafbfc}
+.num{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.label-row td{font-weight:700;color:#334155}
+
+/* ── Badges ── */
+.badge-ok{color:#1d4ed8;background:#dbeafe;padding:3px 10px;border-radius:9999px;font-size:.82em;font-weight:600;white-space:nowrap}
+.badge-ng{color:#b91c1c;background:#fee2e2;padding:3px 10px;border-radius:9999px;font-size:.82em;font-weight:600;white-space:nowrap}
+.badge-na{color:#64748b;background:#f1f5f9;padding:3px 10px;border-radius:9999px;font-size:.82em}
+.badge-info{color:#1d4ed8;background:#dbeafe;padding:3px 10px;border-radius:9999px;font-size:.82em}
+.badge-ref{color:#7c3aed;background:#ede9fe;padding:3px 10px;border-radius:9999px;font-size:.82em}
+
+/* ── Menu table ── */
+.menu-parent td{font-weight:700;color:#334155;background:#f1f5f9}
+.menu-child td{color:#475569}
+.menu-child td:first-child{padding-left:28px}
+
+/* ── Footer ── */
+.footer{text-align:center;color:#94a3b8;font-size:.78em;padding:16px 0 40px}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div style="max-width:1120px;margin:0 auto">
+    <div class="hdr-store">クッポグラフィー 駒沢公園スタジオ</div>
+    <div class="hdr-title">2025年12月　月次売上レポート</div>
+    <div class="hdr-meta">作成日時：2026年03月19日 23:39</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ★ サマリーカード -->
+  <div class="cards">
+    <div class="card c-total">
+      <div class="card-label">スタジオ総売上（税抜）</div>
+      <div class="card-value">¥13,269,701</div>
+      <div class="card-sub">当日 ＋ その他 ＋ ロケ</div>
+    </div>
+    <div class="card c-studio">
+      <div class="card-label">スタジオ当日売上（税抜）</div>
+      <div class="card-value">¥13,269,700</div>
+      <div class="card-sub">TG: ¥15,360,000 ／ 昨対: ¥14,766,445</div>
+    </div>
+    <div class="card c-other">
+      <div class="card-label">スタジオその他売上（税抜）</div>
+      <div class="card-value">¥0</div>
+      <div class="card-sub">スクエア請求書 0 件</div>
+    </div>
+    <div class="card c-location">
+      <div class="card-label">ロケーション撮影売上（税抜）</div>
+      <div class="card-value">¥1</div>
+      <div class="card-sub">TG: ¥1,190,000 ／ 昨対: ¥838,091</div>
+    </div>
+  </div>
+
+  <!-- ★ チャート -->
+  <div class="chart-grid">
+    <div class="chart-box">
+      <div class="section-title">📊 日別スタジオ売上推移</div>
+      <canvas id="dailyChart" height="220"></canvas>
+    </div>
+    <div class="chart-box">
+      <div class="section-title">🥧 売上構成（税抜）</div>
+      <canvas id="donutChart" height="220"></canvas>
+    </div>
+  </div>
+
+  <!-- ★ スタジオ実績詳細 -->
+  <div class="section">
+    <div class="section-title">📸 スタジオ実績詳細</div>
+<table>
+<tr><th>指標</th><th>実績</th><th>TG</th><th>TG比</th><th>昨対</th><th>昨対比</th></tr>
+<tr class="label-row"><td>スタジオ当日売上（税抜）</td><td class="num">¥13,269,700</td><td class="num">¥15,360,000</td><td><span class="badge-ng">-13.6%（¥-2,090,300）</span></td><td class="num">¥14,766,445</td><td><span class="badge-ng">-10.1%（¥-1,496,745）</span></td></tr>
+<tr class="label-row"><td>撮影組数</td><td class="num">1 組</td><td class="num">200 組</td><td><span class="badge-ng">-99.5%（¥-199）</span></td><td class="num">188 組</td><td><span class="badge-ng">-99.5%（¥-187）</span></td></tr>
+<tr class="label-row"><td>スタジオ平均単価（当日売上÷撮影組数）</td><td class="num">¥13,269,700</td><td class="num">¥76,800</td><td><span class="badge-ok">+17178.3%（+¥13,192,900）</span></td><td class="num">¥78,545</td><td><span class="badge-ok">+16794.4%（+¥13,191,155）</span></td></tr>
+<tr><td>満枠数</td><td class="num">1</td><td colspan="4" style="color:#94a3b8;font-size:.87em;">手動入力</td></tr>
+<tr><td>撮影枠数</td><td class="num">1</td><td colspan="4" style="color:#94a3b8;font-size:.87em;">手動入力</td></tr>
+<tr><td>満枠率</td><td class="num">100.0%</td><td colspan="4" style="color:#94a3b8;font-size:.87em;">撮影枠数 1 ÷ 満枠数 1</td></tr>
+<tr><td>レジ撮影組数（参考値）</td><td class="num"><span class="badge-info">164 組</span></td><td colspan="4" style="color:#94a3b8;font-size:.87em;">POSレジのグループコード「撮影」件数</td></tr>
+</table>
+  </div>
+
+  <!-- ★ 撮影メニュー別売上 -->
+  <div class="section">
+    <div class="section-title">📋 撮影メニュー別売上（スタジオ当日・税抜）</div>
+<table>
+<tr><th>撮影メニュー</th><th>組数</th><th>組比</th><th>単価</th><th>売上（税抜）</th><th>売上比</th></tr>
+<tr style="font-weight:700;border-top:2px solid #e2e8f0;background:#f8fafc;"><td>合計</td><td class="num">381 組</td><td class="num">—</td><td class="num">¥43,118</td><td class="num">¥16,428,243</td><td class="num">—</td></tr>
+<tr class="menu-parent" onclick="toggleMenuGroup('mg1')" style="cursor:pointer;"><td>📂 バースデー<span id="icon-mg1" style="font-size:.75em;color:#94a3b8;margin-left:4px;user-select:none;">▶</span></td><td class="num">62 組</td><td class="num">16.3%</td><td class="num">¥57,669</td><td class="num">¥3,575,527</td><td class="num">26.9%</td></tr>
+<tr class="detail-row mg1 menu-child"><td>└ ハーフバースデー</td><td class="num">3 組</td><td class="num">0.8%</td><td class="num">¥64,027</td><td class="num">¥192,082</td><td class="num">1.4%</td></tr>
+<tr class="detail-row mg1 menu-child"><td>└ １歳バースデー</td><td class="num">39 組</td><td class="num">10.2%</td><td class="num">¥56,121</td><td class="num">¥2,188,756</td><td class="num">16.5%</td></tr>
+<tr class="detail-row mg1 menu-child"><td>└ ２歳以上バースデー</td><td class="num">20 組</td><td class="num">5.2%</td><td class="num">¥59,734</td><td class="num">¥1,194,689</td><td class="num">9.0%</td></tr>
+<tr class="detail-row mg1 " style="background:#f8fafc;"><td colspan="6" style="padding:4px 12px 2px;font-size:.82em;color:#64748b;font-weight:600;">　　オプション</td></tr>
+<tr class="detail-row mg1 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・キッズ花束</td><td class="num">5 組</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg1 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・ストーリーブック</td><td class="num">11 組</td><td class="num">販売率 18%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="menu-parent" onclick="toggleMenuGroup('mg2')" style="cursor:pointer;"><td>📂 七五三<span id="icon-mg2" style="font-size:.75em;color:#94a3b8;margin-left:4px;user-select:none;">▶</span></td><td class="num">60 組</td><td class="num">15.7%</td><td class="num">¥97,140</td><td class="num">¥5,828,449</td><td class="num">43.9%</td></tr>
+<tr class="detail-row mg2 menu-child"><td>└ ３歳女の子</td><td class="num">15 組</td><td class="num">3.9%</td><td class="num">¥104,887</td><td class="num">¥1,573,316</td><td class="num">11.9%</td></tr>
+<tr class="detail-row mg2 menu-child"><td>└ ３歳男の子</td><td class="num">13 組</td><td class="num">3.4%</td><td class="num">¥83,797</td><td class="num">¥1,089,362</td><td class="num">8.2%</td></tr>
+<tr class="detail-row mg2 menu-child"><td>└ ５歳男の子</td><td class="num">17 組</td><td class="num">4.5%</td><td class="num">¥96,466</td><td class="num">¥1,639,927</td><td class="num">12.4%</td></tr>
+<tr class="detail-row mg2 menu-child"><td>└ ７歳女の子</td><td class="num">15 組</td><td class="num">3.9%</td><td class="num">¥101,722</td><td class="num">¥1,525,844</td><td class="num">11.5%</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;"><td colspan="6" style="padding:4px 12px 2px;font-size:.82em;color:#64748b;font-weight:600;">　　参加者内訳（撮影・支度 行数合計）</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・３歳女の子</td><td class="num">16 名</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・３歳男の子</td><td class="num">13 名</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・５歳女の子</td><td class="num">1 名</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・５歳男の子</td><td class="num">21 名</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・７歳女の子</td><td class="num">17 名</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;"><td colspan="6" style="padding:4px 12px 2px;font-size:.82em;color:#64748b;font-weight:600;">　　オプション</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・キッズ花束</td><td class="num">19 組</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・ママ着物</td><td class="num">16 組</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・パパ着物</td><td class="num">10 組</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;font-size:.82em;color:#94a3b8;"><td style="padding-left:56px;">うち両方着用<span style="font-size:.85em;color:#cbd5e1;margin-left:6px;">※ママ着物またはパパ着物を着用した組数のうち、両方着用している組数の割合</span></td><td class="num">10 組</td><td class="num">62%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg2 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:40px;">・ストーリーブック</td><td class="num">23 組</td><td class="num">販売率 38%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr onclick="toggleMenuGroup('mg3')" style="cursor:pointer;"><td>ふたりのポートレート<span id="icon-mg3" style="font-size:.75em;color:#94a3b8;margin-left:4px;user-select:none;">▶</span></td><td class="num">10 組</td><td class="num">2.6%</td><td class="num">¥142,562</td><td class="num">¥1,425,626</td><td class="num">10.7%</td></tr>
+<tr class="detail-row mg3 menu-child"><td>└ ドレスプラン</td><td class="num">9 組</td><td class="num">2.4%</td><td class="num">¥151,180</td><td class="num">¥1,360,626</td><td class="num">10.3%</td></tr>
+<tr class="detail-row mg3 " style="background:#f8fafc;"><td colspan="6" style="padding:4px 12px 2px;font-size:.82em;color:#64748b;font-weight:600;">　　　　プラン内訳</td></tr>
+<tr class="detail-row mg3 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:56px;">・スタンダード</td><td class="num">4 組</td><td class="num">44%</td><td class="num">¥156,704</td><td class="num">¥626,818</td><td class="num">—</td></tr>
+<tr class="detail-row mg3 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:56px;">・ドレス持込</td><td class="num">0 組</td><td class="num">0%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg3 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:56px;">・メンズ衣装持込</td><td class="num">1 組</td><td class="num">11%</td><td class="num">¥194,718</td><td class="num">¥194,718</td><td class="num">—</td></tr>
+<tr class="detail-row mg3 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:56px;">・ドレス・メンズ衣装持込</td><td class="num">1 組</td><td class="num">11%</td><td class="num">¥142,727</td><td class="num">¥142,727</td><td class="num">—</td></tr>
+<tr class="detail-row mg3 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:56px;">・トリートドレスプラン</td><td class="num">0 組</td><td class="num">0%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg3 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:56px;">・その他</td><td class="num">3 組</td><td class="num">33%</td><td class="num">¥132,121</td><td class="num">¥396,363</td><td class="num">—</td></tr>
+<tr class="detail-row mg3 menu-child"><td>└ 私服プラン</td><td class="num">1 組</td><td class="num">0.3%</td><td class="num">¥65,000</td><td class="num">¥65,000</td><td class="num">0.5%</td></tr>
+<tr class="detail-row mg3 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:56px;">・季節の花束</td><td class="num">0 組</td><td class="num">購入率 0%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg3 menu-child"><td>└ その他プラン<span style="font-size:.82em;color:#cbd5e1;margin-left:6px;">※バレンタインイベント等、規定外のプランがあった場合はここにカウントされる</span></td><td class="num">0 組</td><td class="num">0.0%</td><td class="num">—</td><td class="num">¥0</td><td class="num">0.0%</td></tr>
+<tr class="detail-row mg3 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:24px;">└ ストーリーブック</td><td class="num">3 組</td><td class="num">販売率 30%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr onclick="toggleMenuGroup('mg4')" style="cursor:pointer;"><td>ペット<span id="icon-mg4" style="font-size:.75em;color:#94a3b8;margin-left:4px;user-select:none;">▶</span></td><td class="num">5 組</td><td class="num">1.3%</td><td class="num">¥61,045</td><td class="num">¥305,227</td><td class="num">2.3%</td></tr>
+<tr class="detail-row mg4 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:24px;">└ ストーリーブック</td><td class="num">1 組</td><td class="num">販売率 20%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr onclick="toggleMenuGroup('mg5')" style="cursor:pointer;"><td>マタニティ<span id="icon-mg5" style="font-size:.75em;color:#94a3b8;margin-left:4px;user-select:none;">▶</span></td><td class="num">5 組</td><td class="num">1.3%</td><td class="num">¥64,785</td><td class="num">¥323,927</td><td class="num">2.4%</td></tr>
+<tr class="detail-row mg5 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:24px;">└ 大人女性ヘアメイク</td><td class="num">4 組</td><td class="num">80%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg5 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:24px;">└ 季節の花束</td><td class="num">0 組</td><td class="num">0%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="detail-row mg5 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:24px;">└ ストーリーブック</td><td class="num">1 組</td><td class="num">販売率 20%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr onclick="toggleMenuGroup('mg6')" style="cursor:pointer;"><td>百日・お宮参り<span id="icon-mg6" style="font-size:.75em;color:#94a3b8;margin-left:4px;user-select:none;">▶</span></td><td class="num">3 組</td><td class="num">0.8%</td><td class="num">¥70,300</td><td class="num">¥210,900</td><td class="num">1.6%</td></tr>
+<tr class="detail-row mg6 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:24px;">└ ストーリーブック</td><td class="num">0 組</td><td class="num">販売率 0%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr onclick="toggleMenuGroup('mg7')" style="cursor:pointer;"><td>その他洋装<span id="icon-mg7" style="font-size:.75em;color:#94a3b8;margin-left:4px;user-select:none;">▶</span></td><td class="num">17 組</td><td class="num">4.5%</td><td class="num">¥61,532</td><td class="num">¥1,046,053</td><td class="num">7.9%</td></tr>
+<tr class="detail-row mg7 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:24px;">└ ストーリーブック</td><td class="num">3 組</td><td class="num">販売率 18%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr onclick="toggleMenuGroup('mg8')" style="cursor:pointer;"><td>その他和装<span id="icon-mg8" style="font-size:.75em;color:#94a3b8;margin-left:4px;user-select:none;">▶</span></td><td class="num">1 組</td><td class="num">0.3%</td><td class="num">¥69,345</td><td class="num">¥69,345</td><td class="num">0.5%</td></tr>
+<tr class="detail-row mg8 " style="background:#f8fafc;font-size:.85em;color:#475569;"><td style="padding-left:24px;">└ ストーリーブック</td><td class="num">0 組</td><td class="num">販売率 0%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+</table>
+<p style="font-weight:700;margin:20px 0 8px;font-size:.9em;color:#475569;">🐾 ペット関連（参考）<span style="font-size:.82em;font-weight:400;color:#94a3b8;margin-left:8px;">※ペット同伴は他メニューと重複カウント</span></p>
+<table>
+<tr><th>区分</th><th>組数</th><th>組比</th><th>単価</th><th>売上（税抜）</th><th>売上比</th></tr>
+<tr><td>ペット撮影</td><td class="num">5 組</td><td class="num">1.3%</td><td class="num">¥61,045</td><td class="num">¥305,227</td><td class="num">2.3%</td></tr>
+<tr style="color:#64748b;"><td>ペット同伴撮影 <span style="font-size:.8em;">※重複</span></td><td class="num">11 組</td><td class="num">2.9%</td><td class="num">¥77,903</td><td class="num">¥856,937</td><td class="num">6.5%</td></tr>
+<tr style="color:#94a3b8;font-size:.85em;"><td style="padding-left:2em;">└ バースデー</td><td class="num">3 組</td><td class="num">27.3%</td><td class="num" colspan="3"></td></tr>
+<tr style="color:#94a3b8;font-size:.85em;"><td style="padding-left:2em;">└ その他洋装</td><td class="num">2 組</td><td class="num">18.2%</td><td class="num" colspan="3"></td></tr>
+<tr style="color:#94a3b8;font-size:.85em;"><td style="padding-left:2em;">└ マタニティ</td><td class="num">2 組</td><td class="num">18.2%</td><td class="num" colspan="3"></td></tr>
+<tr style="color:#94a3b8;font-size:.85em;"><td style="padding-left:2em;">└ 七五三</td><td class="num">2 組</td><td class="num">18.2%</td><td class="num" colspan="3"></td></tr>
+<tr style="color:#94a3b8;font-size:.85em;"><td style="padding-left:2em;">└ ペット</td><td class="num">2 組</td><td class="num">18.2%</td><td class="num" colspan="3"></td></tr>
+<tr style="font-weight:700;background:#f8fafc;"><td>合計（参考）</td><td class="num">16 組</td><td class="num">—</td><td class="num">¥72,635</td><td class="num">¥1,162,164</td><td class="num">—</td></tr>
+</table>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.detail-row').forEach(function(r) { r.style.display = 'none'; });
+});
+function toggleMenuGroup(gid) {
+  var rows = document.querySelectorAll('.' + gid);
+  var icon = document.getElementById('icon-' + gid);
+  var hidden = rows.length > 0 && rows[0].style.display === 'none';
+  rows.forEach(function(r) { r.style.display = hidden ? '' : 'none'; });
+  if (icon) icon.textContent = hidden ? '▼' : '▶';
+}
+</script>
+
+  </div>
+
+  <!-- ★ ロケ実績詳細 -->
+  <div class="section">
+    <div class="section-title">🌿 ロケーション撮影 実績詳細</div>
+<table>
+<tr><th>指標</th><th>実績</th><th>TG</th><th>TG比</th><th>昨対</th><th>昨対比</th></tr>
+<tr class="label-row"><td>ロケーション撮影売上（税抜）</td><td class="num">¥1</td><td class="num">¥1,190,000</td><td><span class="badge-ng">-100.0%（¥-1,189,999）</span></td><td class="num">¥838,091</td><td><span class="badge-ng">-100.0%（¥-838,090）</span></td></tr>
+<tr class="label-row"><td>ロケーション撮影組数</td><td class="num">1 組</td><td class="num">14 組</td><td><span class="badge-ng">-92.9%（¥-13）</span></td><td class="num">9 組</td><td><span class="badge-ng">-88.9%（¥-8）</span></td></tr>
+<tr><td>ロケーション平均単価</td><td class="num">¥1</td><td colspan="4" style="color:#94a3b8;font-size:.87em;">ロケ売上 ÷ ロケ組数</td></tr>
+</table>
+  </div>
+
+  <!-- ★ その他売上（請求書・BASE） -->
+  <div class="section">
+    <div class="section-title">📄 スタジオその他売上（スクエア請求書・BASEショップ）</div>
+<p style="color:#94a3b8;text-align:center;padding:20px 0;">請求書・BASEデータなし（対象月: 0件）</p>
+  </div>
+
+  <!-- ★ フラワー商品 -->
+<div class="section">
+<div class="section-title">💐 フラワー商品売上</div>
+<table>
+<tr style="background:#e2e8f0;font-weight:700;"><td>合計</td><td class="num">19 点</td><td class="num">¥55,545</td></tr>
+<tr><th>商品名</th><th>販売点数</th><th>売上（税抜）</th></tr>
+<tr style="background:#f1f5f9;font-weight:700;"><td>📂 キッズ花束</td><td class="num">7 点</td><td class="num">¥46,545</td></tr>
+<tr><td style="padding-left:1.8em;">└ ohana</td><td class="num">4 点</td><td class="num">¥26,818</td></tr>
+<tr><td style="padding-left:1.8em;">└ katana</td><td class="num">1 点</td><td class="num">¥5,364</td></tr>
+<tr><td style="padding-left:1.8em;">└ katana / シーズナル</td><td class="num">1 点</td><td class="num">¥7,182</td></tr>
+<tr><td style="padding-left:1.8em;">└ ohana / シーズナル</td><td class="num">1 点</td><td class="num">¥7,182</td></tr>
+<tr style="background:#f1f5f9;font-weight:700;"><td>📂 フラワーアクセサリー</td><td class="num">3 点</td><td class="num">¥9,000</td></tr>
+<tr><td style="padding-left:1.8em;">└ キッズヘアパーツ</td><td class="num">3 点</td><td class="num">¥9,000</td></tr>
+<tr style="background:#f1f5f9;font-weight:700;"><td>📂 季節の花束（ふたり）</td><td class="num">3 点</td><td class="num">—</td></tr>
+<tr><td style="padding-left:1.8em;">└ oriental</td><td class="num">2 点</td><td class="num">—</td></tr>
+<tr><td style="padding-left:1.8em;">└ rustic</td><td class="num">1 点</td><td class="num">—</td></tr>
+<tr style="background:#f1f5f9;font-weight:700;"><td>📂 アクセサリー（ふたり）</td><td class="num">6 点</td><td class="num">—</td></tr>
+<tr><td style="padding-left:1.8em;">└ ブートニア</td><td class="num">3 点</td><td class="num">—</td></tr>
+<tr><td style="padding-left:1.8em;">└ ヘアパーツ</td><td class="num">3 点</td><td class="num">—</td></tr>
+</table>
+</div>
+
+
+  <!-- ★ フェア別集計 -->
+<div class="section">
+<div class="section-title">🎪 フェア別集計（撮影組数・売上）</div>
+<table>
+<tr><th>フェア名</th><th>組数</th><th>構成比</th><th>売上（税抜）</th><th>単価</th></tr>
+<tr><td>（フェア設定なし）</td><td class="num">0 組</td><td class="num">—</td><td class="num">¥0</td><td class="num">—</td></tr>
+<tr style="font-weight:700;border-top:2px solid #cbd5e1;"><td>合計</td><td class="num">0 組</td><td class="num">—</td><td class="num">¥0</td><td class="num">—</td></tr>
+</table>
+</div>
+
+
+  <!-- ★ 参考情報 -->
+  <div class="section">
+    <div class="section-title">ℹ️ 参考情報</div>
+<table>
+<tr><th>項目</th><th>金額</th><th>備考</th></tr>
+<tr><td>☕ カフェ売上（税抜）</td><td class="num"><span class="badge-ref">¥542,931</span></td><td style="color:#94a3b8;font-size:.87em;">スタジオ総売上には含まれません</td></tr>
+</table>
+<p style="font-weight:700;margin:16px 0 6px;font-size:.9em;color:#475569;">☕ カフェ販売点数ランキング（TOP3）</p>
+<table>
+<tr><th>順位</th><th>商品名</th><th>販売点数</th><th>売上（税抜）</th></tr>
+<tr><td>🥇</td><td>カフェラテ</td><td class="num">189 点</td><td class="num">¥118,300</td></tr>
+<tr><td>🥈</td><td>ワッフル プレーン</td><td class="num">77 点</td><td class="num">¥38,636</td></tr>
+<tr><td>🥉</td><td>アメリカーノ</td><td class="num">68 点</td><td class="num">¥39,440</td></tr>
+</table>
+
+  </div>
+
+  <div class="footer">クッポグラフィー 駒沢公園スタジオ — 自動生成レポート 2025年12月分 — 2026年03月19日 23:39 作成</div>
+</div>
+
+<script>
+// ── 日別売上 棒グラフ（スタジオのみ）──
+new Chart(document.getElementById('dailyChart'), {
+  type: 'bar',
+  data: {
+    labels: ["1日", "2日", "3日", "4日", "5日", "6日", "7日", "8日", "9日", "10日", "11日", "12日", "13日", "14日", "15日", "16日", "17日", "18日", "19日", "20日", "21日", "22日", "23日", "24日", "25日", "26日", "27日", "28日", "29日", "30日", "31日"],
+    datasets: [
+      {
+        label: 'スタジオ当日',
+        data: [335915, 253521, 417604, 242240, 555810, 631826, 689917, 324978, 240285, 472198, 366095, 523636, 802058, 547669, 585157, 127760, 341273, 237760, 220868, 465115, 597661, 300025, 301396, 242058, 469083, 348174, 518505, 393703, 511075, 0, 0],
+        backgroundColor: 'rgba(14,165,233,.82)',
+        borderRadius: 4,
+        borderSkipped: false,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'top' } },
+    scales: {
+      y: {
+        ticks: {
+          callback: v => v === 0 ? '0' : v >= 10000 ? (v/10000).toFixed(0)+'万' : v.toLocaleString()
+        }
+      }
+    }
+  }
+});
+
+// ── 売上構成 ドーナツ ──
+new Chart(document.getElementById('donutChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ["スタジオ当日", "その他", "ロケ"],
+    datasets: [{
+      data: [13269700, 0, 1],
+      backgroundColor: [
+        'rgba(14,165,233,.88)',
+        'rgba(139,92,246,.88)',
+        'rgba(6,182,212,.88)'
+      ],
+      borderWidth: 3,
+      borderColor: '#fff',
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom' },
+      tooltip: {
+        callbacks: {
+          label: ctx => ' ¥' + ctx.parsed.toLocaleString()
+        }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
